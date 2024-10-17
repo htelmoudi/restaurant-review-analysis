@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Google Maps Restaurant Reviews",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://maps.googleapis.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_popup_width": 400, 
+      "default_popup_height": 600 
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.google.com/maps/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+  
